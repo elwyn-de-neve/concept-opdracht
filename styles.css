@@ -1,0 +1,130 @@
+/* <----------------- Basic CSS styles -----------------> */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #5722CD;
+    --primary-color-light: #4845E4;
+    --secondary-color: #ED4385;
+    --tertiary-color: #F3F6F9;
+    --text-dark: #0c0c0c;
+    --text-light: #F2F0FF;
+    --text-gray: #7A7A7A;
+}
+
+body {
+    font-size: 16px;
+    /*width: 100vw;*/
+}
+
+h1, h3 {
+    font-family: Merriweather, serif;
+    color: var(--text-dark);
+}
+
+p, a {
+    font-family: Roboto, sans-serif;
+    color: var(--text-dark);
+}
+
+/* <----------------- Reusable CSS styles -----------------> */
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 2em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* <----------------- Header CSS section -----------------> */
+.container {
+    position: relative;
+    background: linear-gradient(30deg, var(--primary-color) 0%, var(--primary-color) 26%, var(--primary-color-light) 100%);
+    z-index: 0;
+}
+
+.container::before {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    border-bottom: 30px solid white;
+    border-right: 100vw solid transparent;
+    z-index: 1;
+}
+
+.container::after {
+    position: absolute;
+    content: '';
+    inset: 0; /* Is similar to; top: 0; bottom: 0; left: 0; right: 0; */
+    background-image: url(./assets/noise-texture.png);
+    z-index: -1;
+}
+
+.container * {
+    color: var(--text-light);
+}
+
+/*
+header::before {
+    position: relative;
+    content: '';
+    !*left: 100%;*!
+    !*text-align: center;*!
+    !*width: calc(100vw - 2em);*!
+    height: 5em;
+    background-image: url(./assets/squiggle_line_stripe.svg);
+    background-repeat: no-repeat;
+}
+*/
+
+.navigation li {
+    margin: 1em 2em;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.navigation a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.hero-section {
+    gap: 2em;
+    margin: 2em 0 6em 0;
+}
+
+.intro-section {
+    color: var(--primary-color);
+    gap: 1em;
+}
+
+.cta-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    font-size: 0.8em;
+    text-transform: uppercase;
+    padding: 1.4rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* <----------------- Main CSS section -----------------> */
+
+
+/* <----------------- Footer CSS section -----------------> */
+
+
+/* <----------------- Media Query for Desktop -----------------> */
